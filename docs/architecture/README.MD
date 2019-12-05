@@ -31,4 +31,4 @@ Please add a entry below in your Pull Request for an ADR.
 - [ADR 010: Modular AnteHandler](./adr-010-modular-antehandler.md)
 - [ADR 011: Generalize Genesis Accounts](./adr-011-generalize-genesis-accounts.md)
 - [ADR 012: State Accessors](./adr-012-state-accessors.md)
-- [ADR 013: Metrics](./adr-013-metrics.md)
+- [ADR 013: Observability](./adr-013-observability.md)
