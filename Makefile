@@ -69,7 +69,7 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
-	git checkout https://github.com/cosmos/cosmos-sdk
+	git clone https://github.com/cosmos/cosmos-sdk
 	@cd cosmos-sdk/docs && \
 	while read p; do \
 		echo "CHECKING OUT REPO, BRANCH " $p ; \
