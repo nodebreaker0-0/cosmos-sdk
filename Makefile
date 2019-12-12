@@ -71,6 +71,7 @@ godocs:
 build-docs:
 	git clone https://github.com/cosmos/cosmos-sdk && \
 	cd cosmos-sdk && \
+	git checkout docs-theme-latest-netlify-test && \
 	cd docs && \
 	while read p; do \
 		(git checkout $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
