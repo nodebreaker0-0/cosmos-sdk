@@ -69,12 +69,11 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
-	git clone https://github.com/cosmos/cosmos-sdk
-	cd cosmos-sdk/docs
-	git checkout docs-theme-latest-netlify-test
-	npm install && VUEPRESS_BASE="/docs-theme-latest-netlify-test/" npm run build
-	mkdir -p ./output/
-	cp -r .vuepress/dist/* ./output/docs-theme-latest-netlify-test/
+	git checkout docs-theme-latest && \
+	cd docs && \
+	npm install && VUEPRESS_BASE="/docs-theme-latest/" npm run build && \
+	mkdir -p ./output/docs-theme-latest && \
+	cp -r .vuepress/dist/* ./output/docs-theme-latest/
 	# @cd docs && \
 	# while read p; do \
 	# 	echo "CHECKING OUT REPO, BRANCH " $p ; \

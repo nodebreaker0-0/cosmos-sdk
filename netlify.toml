@@ -1,6 +1,6 @@
 [build]
   base = ""
-  publish = "cosmos-sdk/docs/output"
+  publish = "docs/output"
   command = "make build-docs"
 
 [[redirects]]
