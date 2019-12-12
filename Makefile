@@ -69,11 +69,13 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
-	git remote add origin https://github.com/cosmos/cosmos-sdk && \
+	rm -rf cosmos-sdk && \
+	git clone https://github.com/cosmos/cosmos-sdk && \
+	cd cosmos-sdk && \
+	git checkout docs-theme-latest-netlify-test && \
 	cd docs && \
 	while read p; do \
-		git fetch --all && \
-		(git switch -c $${p} && git pull origin $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
+		(git checkout $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
 		mkdir -p ./output/$${p} ; \
 		cp -r .vuepress/dist/* ./output/$${p}/ ; \
 	done < versions ;
