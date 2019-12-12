@@ -178,12 +178,6 @@ module.exports = {
       {
         ga: "UA-51029217-12"
       }
-    ],
-    [
-      "sitemap",
-      {
-        hostname: "https://docs.cosmos.network"
-      }
     ]
   ]
 };
