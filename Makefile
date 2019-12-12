@@ -69,24 +69,13 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
-	git fetch --all && \
-	git branch && \
 	cd docs && \
-	npm install && VUEPRESS_BASE="/docs-theme-latest-netlify-test/" npm run build && \
-	mkdir -p ./output/docs-theme-latest-netlify-test && \
-	cp -r .vuepress/dist/* ./output/docs-theme-latest-netlify-test/ && \
-	git checkout master && \
-	npm install && VUEPRESS_BASE="/master/" npm run build && \
-	mkdir -p ./output/master && \
-	cp -r .vuepress/dist/* ./output/master/
-
-	# @cd docs && \
-	# while read p; do \
-	# 	echo "CHECKING OUT REPO, BRANCH " $p ; \
-	# 	(git checkout $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
-	# 	mkdir -p ./output/$${p} ; \
-	# 	cp -r .vuepress/dist/* ./output/$${p}/ ; \
-	# done < versions ;
+	while read p; do \
+		(git checkout $p && npm install && VUEPRESS_BASE="/$p/" npm run build) ; \
+		mkdir -p ~/output/$p ; \
+		cp -r .vuepress/dist/* ~/output/$p/ ; \
+		cp ~/output/$p/index.html ~/output ; \
+	done < versions ;
 
 sync-docs:
 	cd ~/output && \
