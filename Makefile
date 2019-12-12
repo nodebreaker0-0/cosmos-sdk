@@ -74,7 +74,13 @@ build-docs:
 	cd docs && \
 	npm install && VUEPRESS_BASE="/master/" npm run build && \
 	mkdir -p ./output/master && \
-	cp -r .vuepress/dist/* ./output/master/
+	cp -r .vuepress/dist/* ./output/master/ && \
+	git checkout docs-theme-latest-netlify-test && \
+	cd docs && \
+	npm install && VUEPRESS_BASE="/docs-theme-latest-netlify-test/" npm run build && \
+	mkdir -p ./output/docs-theme-latest-netlify-test && \
+	cp -r .vuepress/dist/* ./output/docs-theme-latest-netlify-test/
+
 	# @cd docs && \
 	# while read p; do \
 	# 	echo "CHECKING OUT REPO, BRANCH " $p ; \
