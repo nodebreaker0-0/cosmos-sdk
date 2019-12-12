@@ -1,10 +1,12 @@
 [build]
   base = ""
   publish = "docs/output"
-
-  # Default build command.
   command = "make build-docs"
 
 [[redirects]]
-  from = "/"
+  from = "/."
+  to = "/master/"
+
+[[redirects]]
+  from = "/wrong-url"
   to = "/master/"
