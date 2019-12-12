@@ -69,7 +69,10 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
-	git fetch --all
+	git clone https://github.com/cosmos/cosmosd-sdk
+	cd cosmos-sdk
+	ls
+	git branch
 	git checkout docs-theme-latest-netlify-test
 	git checkout master
 
