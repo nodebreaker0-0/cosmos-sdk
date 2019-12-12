@@ -69,6 +69,7 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
+	git fetch --all && \
 	git checkout docs-theme-latest && \
 	cd docs && \
 	npm install && VUEPRESS_BASE="/docs-theme-latest/" npm run build && \
