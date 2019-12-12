@@ -70,6 +70,7 @@ godocs:
 
 build-docs:
 	git fetch --all && \
+	git checkout docs-theme-latest-netlify-test && \
 	cd docs && \
 	while read p; do \
 		(git checkout $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
