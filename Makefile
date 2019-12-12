@@ -70,15 +70,8 @@ godocs:
 
 build-docs:
 	git fetch --all
-	git branch
-	git branch -a
-	# @cd docs && \
-	# while read p; do \
-	# 	echo "CHECKING OUT REPO, BRANCH " $p ; \
-	# 	(git checkout $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
-	# 	mkdir -p ./output/$${p} ; \
-	# 	cp -r .vuepress/dist/* ./output/$${p}/ ; \
-	# done < versions ;
+	git checkout docs-theme-latest-netlify-test
+	git checkout master
 
 sync-docs:
 	cd ~/output && \
