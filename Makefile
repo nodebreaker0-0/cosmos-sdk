@@ -70,6 +70,7 @@ godocs:
 
 build-docs:
 	@cd docs && \
+	git fetch origin \
 	while read p; do \
 		echo "CHECKING OUT REPO, BRANCH " $p ; \
 		(git checkout $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
