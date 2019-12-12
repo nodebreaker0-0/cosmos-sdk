@@ -70,11 +70,18 @@ godocs:
 
 build-docs:
 	git clone https://github.com/cosmos/cosmos-sdk
-	cd cosmos-sdk
-	ls
-	git branch
+	cd cosmos-sdk/docs
 	git checkout docs-theme-latest-netlify-test
-	git checkout master
+	npm install && VUEPRESS_BASE="/docs-theme-latest-netlify-test/" npm run build
+	mkdir -p ./output/
+	cp -r .vuepress/dist/* ./output/docs-theme-latest-netlify-test/
+	# @cd docs && \
+	# while read p; do \
+	# 	echo "CHECKING OUT REPO, BRANCH " $p ; \
+	# 	(git checkout $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
+	# 	mkdir -p ./output/$${p} ; \
+	# 	cp -r .vuepress/dist/* ./output/$${p}/ ; \
+	# done < versions ;
 
 sync-docs:
 	cd ~/output && \
