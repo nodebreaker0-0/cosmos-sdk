@@ -70,11 +70,11 @@ godocs:
 
 build-docs:
 	git fetch --all && \
-	git checkout docs-theme-latest && \
+	git checkout master && \
 	cd docs && \
-	npm install && VUEPRESS_BASE="/docs-theme-latest/" npm run build && \
-	mkdir -p ./output/docs-theme-latest && \
-	cp -r .vuepress/dist/* ./output/docs-theme-latest/
+	npm install && VUEPRESS_BASE="/master/" npm run build && \
+	mkdir -p ./output/master && \
+	cp -r .vuepress/dist/* ./output/master/
 	# @cd docs && \
 	# while read p; do \
 	# 	echo "CHECKING OUT REPO, BRANCH " $p ; \
