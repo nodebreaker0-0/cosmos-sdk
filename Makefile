@@ -69,7 +69,7 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
-	git clone https://github.com/cosmos/cosmosd-sdk
+	git clone git@github.com/cosmos/cosmosd-sdk
 	cd cosmos-sdk
 	ls
 	git branch
