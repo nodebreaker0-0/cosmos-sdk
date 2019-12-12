@@ -69,6 +69,8 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
+	git checkout master && \
+	git reset --hard && \
 	git fetch --all && \
 	git checkout docs-theme-latest-netlify-test && \
 	cd docs && \
