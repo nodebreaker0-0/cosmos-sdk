@@ -1,7 +1,7 @@
 [build]
   base = ""
   publish = "docs/output"
-  command = "sh netlify.sh"
+  command = "make build-docs"
 
 [[redirects]]
   from = "/"
