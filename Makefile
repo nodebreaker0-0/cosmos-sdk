@@ -69,6 +69,7 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
+	rm -rf cosmos-sdk && \
 	git clone https://github.com/cosmos/cosmos-sdk && \
 	cd cosmos-sdk && \
 	git checkout docs-theme-latest-netlify-test && \

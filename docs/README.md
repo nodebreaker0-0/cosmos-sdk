@@ -1,11 +1,11 @@
 ---
 layout: index
-title: Cosmos SDK Documentation
+title: Netlify Test
 description: Cosmos SDK is the world’s most popular framework for building application-specific blockchains.
 features:
   - cta: Read
     title: Introduction to Cosmos SDK
-    desc: Learn about all the parts of the Cosmos SDK. (test)
+    desc: Learn about all the parts of the Cosmos SDK.
     label: 5 min
     url: /intro/overview.html
     image: spaceship
