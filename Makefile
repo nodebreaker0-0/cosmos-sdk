@@ -69,6 +69,8 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
+	git clone https://github.com/cosmos/cosmos-sdk && \
+	cd cosmos-sdk && \
 	cd docs && \
 	while read p; do \
 		(git checkout $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
