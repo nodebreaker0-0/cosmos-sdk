@@ -4,9 +4,11 @@
   command = "make build-docs"
 
 [[redirects]]
-  from = "/."
+  from = "/"
   to = "/master/"
+  force = true
 
 [[redirects]]
   from = "/wrong-url"
   to = "/master/"
+  force = true
