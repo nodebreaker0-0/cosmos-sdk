@@ -69,6 +69,7 @@ godocs:
 	godoc -http=:6060
 
 build-docs:
+	git remote add origin https://github.com/cosmos/cosmos-sdk && \
 	cd docs && \
 	while read p; do \
 		(git checkout $${p} || git checkout -b $${p} && git pull remote $${p} && npm install && VUEPRESS_BASE="/$${p}/" npm run build) ; \
