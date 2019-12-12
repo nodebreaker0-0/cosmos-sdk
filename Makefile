@@ -70,15 +70,15 @@ godocs:
 
 build-docs:
 	git fetch --all && \
-	git checkout master && \
+	git branch && \
 	cd docs && \
-	npm install && VUEPRESS_BASE="/master/" npm run build && \
-	mkdir -p ./output/master && \
-	cp -r .vuepress/dist/* ./output/master/ && \
-	git checkout docs-theme-latest-netlify-test && \
 	npm install && VUEPRESS_BASE="/docs-theme-latest-netlify-test/" npm run build && \
 	mkdir -p ./output/docs-theme-latest-netlify-test && \
-	cp -r .vuepress/dist/* ./output/docs-theme-latest-netlify-test/
+	cp -r .vuepress/dist/* ./output/docs-theme-latest-netlify-test/ && \
+	git checkout master && \
+	npm install && VUEPRESS_BASE="/master/" npm run build && \
+	mkdir -p ./output/master && \
+	cp -r .vuepress/dist/* ./output/master/
 
 	# @cd docs && \
 	# while read p; do \
