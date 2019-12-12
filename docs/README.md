@@ -19,7 +19,7 @@ features:
     image: window
 sections:
   - title: Introduction
-    desc: High-level overview of the Cosmos SDK.
+    desc: High-level overview of the Cosmos SDK
     url: /intro/overview.html
     icon: introduction
   - title: Basics
